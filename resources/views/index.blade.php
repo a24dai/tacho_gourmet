@@ -40,9 +40,30 @@
   </nav>
 
   <h2 class="brand-header">予測/検索</h2>
-
   <div class="main-wrap">
-    <p>Hello World</p>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>氏名</th>
+          <th>乗務員ID</th>
+          <th>日付</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center"><img src="{{ env('AVATAR') }}" class="avatar-img"></td>
+          <td>斎藤太郎</td>
+          <td>234</td>
+          <td>2019/09/15</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="button-wrap">
+      <a><i class="fas fa-car"></i>&nbsp;&nbsp;Start Prediction</a>
+    </div>
+
     <div id="map"></div>
   </div>
 

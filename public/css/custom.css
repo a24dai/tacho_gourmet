@@ -31,5 +31,20 @@ body {
   border-radius: 50%;
 }
 
+.button-wrap {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
+
+.button-wrap a {
+  background-color: #93c9ff;
+  padding: 15px 60px;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px #ccc;
+  color: #fff !important;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+}
 
