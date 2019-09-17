@@ -43,12 +43,26 @@
 
   <div class="main-wrap">
     <p>Hello World</p>
+    <div id="map"></div>
   </div>
 
 
-
   <!-- Scripts -->
+  <script>
+    //var map;
+    function initMap() {
+      console.log('working');
+      //map = new google.maps.Map(document.getElementById('map'), {
+      //  center: {lat: -34.397, lng: 150.644},
+      //  zoom: 8
+      new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: { lat: 35.662, lng: 139.703 }
+      });
+    }
+  </script>
   <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/custom.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&callback=initMap"
+  async defer></script>
 </body>
 </html>
