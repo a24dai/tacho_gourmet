@@ -1,0 +1,26 @@
+body {
+  background-color: #efeff6;
+}
+
+.brand-header {
+  padding: 20px 0 5px;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #aaa;
+  border-bottom: solid 1px #ccc;
+}
+
+.main-wrap {
+  width: 60%;
+  margin: 20px auto;
+  border: none;
+  background-color: #fff;
+  padding: 20px;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+  box-shadow: 0px 1px 2px 1px rgba(154, 154, 204, 0.22);
+}
+
+
+
