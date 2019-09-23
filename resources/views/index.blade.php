@@ -80,5 +80,6 @@
   <script src="{{ asset('js/maps.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&callback=initMap"
   async defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 </body>
 </html>
