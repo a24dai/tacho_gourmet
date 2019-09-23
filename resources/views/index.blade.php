@@ -41,6 +41,7 @@
 
   <h2 class="brand-header">予測/検索</h2>
   <div class="main-wrap">
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -60,6 +61,12 @@
       </tbody>
     </table>
 
+    <ul class="select-wrap">
+      <li><a><i class="far fa-clock"></i>&nbsp;5min</a></li>
+      <li><a><i class="far fa-clock"></i>&nbsp;15min</a></li>
+      <li><a><i class="far fa-clock"></i>&nbsp;30min</a></li>
+    </ul>
+
     <div class="button-wrap">
       <a><i class="fas fa-car"></i>&nbsp;&nbsp;Start Prediction</a>
     </div>
@@ -69,20 +76,8 @@
 
 
   <!-- Scripts -->
-  <script>
-    //var map;
-    function initMap() {
-      console.log('working');
-      //map = new google.maps.Map(document.getElementById('map'), {
-      //  center: {lat: -34.397, lng: 150.644},
-      //  zoom: 8
-      new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: { lat: 35.662, lng: 139.703 }
-      });
-    }
-  </script>
   <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/maps.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&callback=initMap"
   async defer></script>
 </body>
