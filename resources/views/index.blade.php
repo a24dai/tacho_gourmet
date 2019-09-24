@@ -68,7 +68,7 @@
     </ul>
 
     <div class="button-wrap">
-      <a><i class="fas fa-car"></i>&nbsp;&nbsp;Start Prediction</a>
+      <a href="/send"><i class="fas fa-car"></i>&nbsp;&nbsp;Start Prediction</a>
     </div>
 
     <div id="map"></div>
