@@ -6,12 +6,16 @@ use Illuminate\Http\Request;
 
 class SendRequestController extends Controller
 {
+
+    private $lat = '35.659602';
+    private $lng = '139.702592';
+
     public function request()
     {
         $api = env('YOLP_URL');
         $appid = env('YOLP_ID');
         $params = [
-            'coordinates' => '139.702592,35.659602',
+            'coordinates' => $this->lng.','.$this->lat,
             'output'      => 'json'
         ];
         $ch = curl_init($api.'?'.http_build_query($params));
@@ -24,7 +28,24 @@ class SendRequestController extends Controller
         curl_close($ch);
 
         $locationInfos = json_decode($result, true);
-        return response()->json($locationInfos['Feature']);
+
+        $contentArr = [];
+        foreach ($locationInfos['Feature'] as $info) {
+            $location = explode(',', $info['Geometry']['Coordinates']);
+            $contentArr[] = [
+                'name' => $info['Name'],
+                'lat'  => $location[1],
+                'lng'  => $location[0]
+            ];
+        }
+
+        return response()->json([
+            'prediction' => [
+                'lat' => $this->lat,
+                'lng' => $this->lng,
+            ],
+            'facilities' => $contentArr
+        ]);
     }
 }
 

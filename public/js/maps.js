@@ -85,25 +85,23 @@ $(function(){
   });
 
 
-//  $(".button-wrap a").on("click", function(event){
-//    //event.preventDefault();
-//    $.ajax({
-//       type: 'GET',
-//       timeout: 10000,
-//       url: "https://map.yahooapis.jp/spatial/V1/shapeSearch?coordinates=139.702592,35.659602&appid=dj00aiZpPUhZNjVjeDVva0pxMyZzPWNvbnN1bWVyc2VjcmV0Jng9ZTY-&output=json",
-//       headers: {
-//            "Access-Control-Allow-Origin" : "*",
-//        },
-//       cache: false,
-//    }).done(function(e){
-//       console.log(e);
-//    }).fail(function(e){
-//       console.log(e);
-//    }).always(function(e){
-//       console.log(e);
-//    });
-//
-//  });
+  $(".button-wrap a").on("click", function(event){
+    event.preventDefault();
+    $.ajaxSetup({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+    });
+    $.ajax({
+      type: "POST",
+      url: "/"
+    }).done(function(location){
+      console.log(location);
+    }).fail(function(e){
+      //
+    }).always(function(e){
+      //
+    });
+
+  });
 
 
 });
