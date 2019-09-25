@@ -6,9 +6,6 @@ var prediction = {
   lng: 139.702592,
 };
 
-getLocation(function(markerData){
-  console.log(markerData);
-});
 
 function initMap() {
   // マップを描画
@@ -55,9 +52,10 @@ function markerEvent(i) {
 function getLocation(callback) {
   var locationInfos;
   var markerData = [];
+  var url = '/send?lat='+prediction.lat+'&lng='+prediction.lng;
   var xhr = new XMLHttpRequest();
   
-  xhr.open('GET', '/send');
+  xhr.open('GET', url);
   xhr.send();
   
   xhr.onreadystatechange = function() {
@@ -88,7 +86,6 @@ function getLocation(callback) {
 
 
 
-
 //-------------------------------------
 
 $(function(){
@@ -98,31 +95,5 @@ $(function(){
     $(this).toggleClass("active");
   });
 
-
-  $(".button-wrap a").on("click", function(event){
-    event.preventDefault();
-    $.ajaxSetup({
-      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
-    });
-    $.ajax({
-      type: "POST",
-      url: "/"
-    }).done(function(location){
-      console.log(location);
-    }).fail(function(e){
-      //
-    }).always(function(e){
-      //
-    });
-
-  });
-
-
 });
-
-
-
-
-
-
 

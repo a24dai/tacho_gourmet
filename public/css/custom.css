@@ -42,7 +42,6 @@ ul {
 }
 
 .button-wrap a {
-  background-color: #93c9ff;
   padding: 15px 60px;
   border-radius: 10px;
   box-shadow: 0 2px 2px #ccc;
@@ -52,8 +51,20 @@ ul {
   cursor: pointer;
 }
 
-.button-wrap a:active {
+.predict-button {
+  background-color: #93c9ff;
+}
+
+.back-button {
+  background-color: #65d5b5;
+}
+
+.predict-button:active {
   background-color: #4169e1;
+}
+
+.back-button:active {
+  background-color: #3cb371;
 }
 
 .select-wrap {
