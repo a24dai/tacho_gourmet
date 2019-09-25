@@ -34,15 +34,15 @@ class SendRequestController extends Controller
             $location = explode(',', $info['Geometry']['Coordinates']);
             $contentArr[] = [
                 'name' => $info['Name'],
-                'lat'  => $location[1],
-                'lng'  => $location[0]
+                'lat'  => (float)$location[1],
+                'lng'  => (float)$location[0]
             ];
         }
 
         return response()->json([
             'prediction' => [
-                'lat' => $this->lat,
-                'lng' => $this->lng,
+                'lat' => (float)$this->lat,
+                'lng' => (float)$this->lng,
             ],
             'facilities' => $contentArr
         ]);

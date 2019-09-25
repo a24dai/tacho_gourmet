@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::post('/', 'SendRequestController@request');
+Route::get('/send', 'SendRequestController@request');
 
