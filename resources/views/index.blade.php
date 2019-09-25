@@ -32,12 +32,16 @@
     <a href="/result" class="predict-button"><i class="fas fa-car"></i>&nbsp;&nbsp;Start Prediction</a>
   </div>
 
+  <div id="map"></div>
+
 </div>
 
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/maps.js') }}"></script>
+<script src="{{ asset('js/present.js') }}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&callback=initMap"
+async defer></script>
 
 @endsection
 

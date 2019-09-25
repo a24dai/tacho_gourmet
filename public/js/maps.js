@@ -2,10 +2,11 @@ var map;
 var marker = [];
 var infoWindow = [];
 var prediction = {
-  lat: 35.659602,
-  lng: 139.702592,
+  lat: 35.660299,
+  lng: 139.702260,
+//  lat: 35.663725,
+//  lng: 139.732963,
 };
-
 
 function initMap() {
   // マップを描画
