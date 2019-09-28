@@ -25,7 +25,7 @@
   <ul class="select-wrap">
     <li><a><i class="far fa-clock"></i>&nbsp;5min</a></li>
     <li><a><i class="far fa-clock"></i>&nbsp;15min</a></li>
-    <li><a><i class="far fa-clock"></i>&nbsp;30min</a></li>
+    <li><a id="predict-btn"><i class="far fa-clock"></i>&nbsp;30min</a></li>
   </ul>
 
   <div class="button-wrap">
@@ -40,6 +40,7 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/present.js') }}"></script>
+<script src="{{ asset('js/location.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{ env('MAPS_API_KEY') }}&callback=initMap"
 async defer></script>
 

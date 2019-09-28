@@ -7,9 +7,38 @@ use Illuminate\Http\Request;
 class SendRequestController extends Controller
 {
 
-    public function showResult()
+    public function prediction(Request $request)
     {
-        return view('result');
+        $data = $request->query('location');
+
+        $url = env('ABEJA_USER');
+        $user = env('ABEJA_USER');
+
+        // curlを初期化
+        $ch = curl_init();
+
+        // 設定!
+        curl_setopt($ch, CURLOPT_URL, $url); // 送り先
+        curl_setopt($ch, CURLOPT_POST, true); // POSTです
+        curl_setopt($ch,CURLOPT_HTTPHEADER, [
+            "Content-Type: application/json"
+        ]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); // 送信データ
+        curl_setopt($ch, CURLOPT_USERPWD, $user);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // 実行結果取得の設定
+
+        // 実行！
+        $output = curl_exec($ch);
+
+        // リソースを閉じる
+        curl_close($ch);
+
+        // 整形
+        $output = ltrim($output, '[');
+        $output = rtrim($output, ']');
+        $prediction = explode(', ', $output);
+
+        return view('result', compact('prediction'));
     }
 
     public function request(Request $request)

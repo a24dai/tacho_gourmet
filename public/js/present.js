@@ -8,7 +8,6 @@ var present = {
   icon: 'now.png',
 };
 
-
 function initMap() {
   // マップを描画
   var mapLatLng = new google.maps.LatLng({lat: present.lat, lng: present.lng});
